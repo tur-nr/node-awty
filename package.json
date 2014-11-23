@@ -1,0 +1,23 @@
+{
+  "name": "awty",
+  "version": "0.0.1",
+  "description": "\"Are we there yet?\", a timeout/interval utility for polling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "poll",
+    "polling",
+    "interval",
+    "timeout"
+  ],
+  "author": "Christopher Turner <turner296@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isval": "0.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}

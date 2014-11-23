@@ -6,6 +6,10 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tur-nr/node-awty"
+  },
   "keywords": [
     "poll",
     "polling",
@@ -13,6 +17,10 @@
     "timeout"
   ],
   "author": "Christopher Turner <turner296@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/tur-nr/node-awty/issues"
+  },
+  "homepage": "https://github.com/tur-nr/node-awty",
   "license": "MIT",
   "dependencies": {
     "isval": "0.0.2"

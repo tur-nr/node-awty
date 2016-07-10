@@ -66,6 +66,25 @@ Set the timeout for each poll by the `every` method, passing a number of ms each
 
 A poll limit can also be set by the `ask` method, just pass a maximum number the poll should call.
 
+### Async Usage
+
+The callback that `awty` takes is also provided a `next` function as an argument. If the function uses the argument, it will wait until the `next` function is called.
+
+Instead of returning, whether or not to stop needs to be provided as an argument to the `next` function.
+
+```js
+var awty = require('awty');
+var poll = awty(function(next) {
+  setTimeout(function() {
+    next(/* `true` if polling should be finished */);
+  }, 100)
+});
+
+poll(function() {
+  console.log('finished polling');
+});
+```
+
 ### Incremental Polls
 
 It possible to increment the timeout after each poll, using the `incr` method it will double the last timeout. Or supplying an number of ms to increment by.

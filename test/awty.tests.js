@@ -47,7 +47,28 @@ describe('awty#()', function() {
   });
 });
 
-describe('awty#ask()', function() { 
+describe('awty#(next)', function() {
+  it('should poll once and callback sucess', function(done) {
+    var poll = awty(function awty_next(next) {
+      setTimeout(function() {
+        next(true);
+      }, 100);
+    })
+      , timeout;
+
+    poll.every(100);
+
+    poll(function(fin) {
+      clearTimeout(timeout);
+      assert.ok(fin);
+      done();
+    });
+
+    timeout = setTimeout(error, 1000 + TIMEOUT_BUFFER);
+  });
+});
+
+describe('awty#ask()', function() {
   it('should set an ask limit', function(done) {
     var poll = awty(function() { return ++i >= 3; })
       , i = 0;

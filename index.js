@@ -20,8 +20,15 @@ module.exports = function awty(poll) {
       , done;
 
     function run() {
-      var result = poll()
-        , timeout = every
+      var result = poll(next);
+
+      if (poll.length === 0) {
+        next(result);
+      }
+    }
+
+    function next(result) {
+      var timeout = every
         , fin = done;
 
       counter += 1;

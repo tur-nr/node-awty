@@ -1,6 +1,6 @@
 {
   "name": "awty",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "\"Are we there yet?\", a timeout/interval utility for polling.",
   "main": "index.js",
   "scripts": {
